@@ -1,0 +1,49 @@
+<div class="big-title">
+	<h3>处理反馈信息</h3>
+</div>
+
+<div class="grid-box" id="order">
+	<div class="panel panel-default">
+		<div class="panel-heading font-bold">处理反馈</div>
+		<div class="panel-body">
+
+	<div class="feedback-content" style="width: 100%; margin: 20px auto;">
+		<div class="f-user">
+			<div class="portait">
+				<img src="resource/user_img/s-item1.png" alt="">
+				<span>{{feed.userNaem}}</span>
+			</div>
+			<div class="fb-content">
+				<div class="triangle-left"></div>
+				<div class="con">{{feed.feedBack}}
+					<p class="date">{{feed.submitDate}}</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="f-staff" ng-if="feed.state=='已处理'">
+			<div class="portait">
+				<img src="resource/admin_img/kefu.png" alt="">
+				<span>{{feed.replyer}}</span>
+			</div>
+			<div class="fb-content">
+				<div class="triangle-right"></div>
+				<div class="con">{{feed.reply}}
+					<p class="date">{{feed.replyDate}}</p>
+				</div>
+			</div>
+			
+		</div>
+
+		<div style="width: 100%;margin: 40px auto;" ng-if="feed.state=='未处理'">
+			<p style="">回复内容：</p>
+			<div class="form-group" style="text-align: center">
+				<textarea ng-model="feed.reply" class="form-control"></textarea>
+				<button class="btn btn-info" style="width: 130px; margin: 20px 10px;display: inline-block;" ng-click="replyFeedBack()">回复</button>
+				<button class="btn btn-primary" style="width: 130px; margin: 20px 10px;display: inline-block;" ng-click="back()">返回</button>
+			</div>
+		</div>
+
+	</div>
+	
+</div>

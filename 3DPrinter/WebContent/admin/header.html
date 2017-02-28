@@ -1,0 +1,11 @@
+<div class="nav-header" ng-controller="HeadCtrl">
+	<div class="a-logo"><img src="resource/admin_img/main_logo.png" alt=""></div>
+	<div class="pull-right own">
+		<a ui-sref="admin.editself"><span class="glyphicon glyphicon-user big-font"></span></a>
+		<a href="" ng-click="logout()"><span class="glyphicon glyphicon-log-out big-font"></span></a>
+		<a class="admin" ui-sref="admin.editself">
+			<span class="uname">{{currentAdmin.adName}}</span>
+			<span class="img"><img ng-src="{{currentAdmin.portrait}}" alt=""></span>
+		</a>
+	</div>
+</div>

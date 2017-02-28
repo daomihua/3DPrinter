@@ -1,0 +1,47 @@
+<div class="big-title">
+	<h3>修改角色{{roleid}}</h3>
+</div>
+
+
+	<div class="add-box">
+		<div class="panel panel-default">
+			<div class="panel-heading font-bold">修改角色</div>
+			<div class="panel-body">
+				<form action="" class="form-horizontal add-form">
+					<div class="form-group">
+						<label for="" class="control-label col-sm-2">角色名</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" ng-model="roleName" disabled>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="" class="control-label col-sm-2">角色描述</label>
+						<div class="col-sm-9">
+							<textarea ng-model="roleIntro" cols="30" rows="5" class="form-control"></textarea>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="" class="control-label col-sm-2">拥有权限</label>
+						<div class="col-sm-9">
+							<ul>
+								<li ng-repeat="a in authority">{{a.authorityName}}</li>
+							</ul>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="" class="control-label col-sm-2">权限分配</label>
+						<div class="col-sm-9">
+							<label for="" ng-repeat="autho in authos" class="checkbox-inline"><input type="checkbox" id="{{autho.authorityID}}" ng-checked=""  ng-click="updateSelection($event,autho.authorityID)">
+								{{autho.authorityName}}
+							</label>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-offset-4 col-sm-8">
+							<button class="btn big-btn btn-info" ng-click="saveRole()">保存</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>	
+	</div>

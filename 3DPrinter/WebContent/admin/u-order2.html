@@ -1,0 +1,121 @@
+<div class="big-title">
+	<h3>设计订单详情</h3>
+</div>
+
+<div class="grid-box" id="order">
+	<div class="panel panel-default">
+		<div class="panel-heading font-bold">查看订单</div>
+		<div class="panel-body">
+
+		<div class="detail-box1">
+			<button ng-if="!order.$editing && order.state=='待确认'" class="btn btn-info edite-item" ng-click="order.$editing=true;" >
+				<i class="glyphicon glyphicon-pencil"></i>编辑
+			</button>
+			<button ng-if="order.$editing && order.state=='待确认'" class="btn btn-success edite-item" ng-click="changeOrder(order);order.$editing=false"><i class="glyphicon glyphicon-floppy-disk"></i>保存</button>
+			<h4>订单编号:&nbsp;{{order.dorderID}}</h4>
+			<div class="con">
+				<dl>
+					<dt>下单用户</dt>
+					<dd>{{order.userName}} ， {{order.phone}}</dd>
+				</dl>
+				<dl>
+					<dt>需求文档</dt>
+					<dd><a href="" ng-click="download(order.demandFile)" title="下载此文档">{{order.demandFile}}</a></dd>
+					<dd ng-if="order.$editing">
+						<div class="upfilebox2" ng-controller="DemandFileCtrl">
+							<input type="file" name="demandfile" bane-file-select="onSelect($files,$error,$dataForm)" file-types="imgType" max-size="'50000000'" create-form="true"  upload-data="data" />
+							<label for="">上传文档</label>
+						</div>
+					</dd>
+				</dl>
+				<dl>
+					<dt>需求描述</dt>
+					<dd>{{order.demand}}</dd>
+					<dd ng-if="order.$editing"> <textarea name="" id="" class="form-control" ng-model="order.demand"></textarea></dd>
+				</dl>
+
+				<dl ng-if="currentAdmin.roleName=='代加工商'">
+					<dt>用户报价</dt>
+					<dd><span style="color: #E44C4C; width: 90px; font-weight: bold;">{{order.userPrice}}</span>元</dd>
+				</dl>
+
+				<dl ng-if="currentAdmin.roleName=='代加工商'">
+					<dt>卖方报价</dt>
+					<dd><span style="color: #E44C4C; width: 90px; font-weight: bold;">{{order.proPrice}}</span>元</dd>
+				</dl>
+
+				<dl ng-if="order.state=='待报价' && currentAdmin.roleName=='代加工商'">
+					<dt>输入报价</dt>
+					<dd><input type="text" ng-model="order.proPrice" class="form-control pro-price">元</dd>
+				</dl>
+
+				<dl ng-if="order.state=='待设计'">
+					<dt>设计文件</dt>
+					<dd>
+						<div class="upfilebox2" ng-controller="DesignFileCtrl">
+							<input type="file" name="designfile" bane-file-select="onSelect($files,$error,$dataForm)" file-types="imgType" max-size="'50000000'" create-form="true"  upload-data="data" />
+							<label for="">上传文件</label>
+						</div>
+					</dd>
+				</dl>
+
+			</div>
+
+			<div class="con">
+				<dl>
+					<dt>订单信息</dt>
+					<dd>
+						<p><span>创建时间:&nbsp;{{order.dorderDate | date:'yyyy-MM-dd HH:mm:ss'}}</span>
+						<span>确认时间:&nbsp;{{order.checkDate | date:'yyyy-MM-dd HH:mm:ss'}}</span>
+						<span>取消时间:&nbsp;{{order.cancelDate | date:'yyyy-MM-dd HH:mm:ss'}}</span></p>
+						<p><span>付款时间:&nbsp;{{order.payDate | date:'yyyy-MM-dd HH:mm:ss'}}</span>
+						<span>发货时间:&nbsp;{{order.deliverDate | date:'yyyy-MM-dd HH:mm:ss'}}</span>
+						</p>
+					</dd>
+				</dl>
+			</div>
+
+			<div class="con">
+				<dl>
+					<dt>设计师</dt>
+					<dd>{{order.designer}}</dd>
+				</dl>
+				<dl>
+					<dt>当前状态</dt>
+					<dd>{{order.state}}</dd>
+				</dl>
+			</div>
+		</div>
+
+		<div class="col-sm-offset-5 col-sm-3">
+			<button class="btn btn-primary" ng-click="back()">返回列表</button>
+			<button class="btn btn-info"ng-if="order.state=='待确认'" ng-click="checkOrder()">确认订单</button>
+			<button class="btn btn-info"ng-if="order.state=='待设计'" ng-click="backOrder()">确认设计</button>
+			<button class="btn btn-info"ng-if="order.state=='待报价' && currentAdmin.roleName=='代加工商'" ng-click="checkPrice()">确认报价</button>
+		</div>
+
+		</div>
+	</div>
+</div>
+
+<!-- <div class="modal fade" id="delModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button class="close" type="button" data-dismiss="modal">
+						<span aria-hidden="true" class="glyphicon glyphicon-remove"></span>
+						<span class="sr-only">Close</span>
+					</button>
+					<h4 class="modal-title">提示</h4>
+				</div>
+
+				<div class="modal-body">
+					<p>确定要确认此订单吗？</p>
+				</div>
+
+				<div class="modal-footer"><button class="btn btn-primary">确定</button></div>
+			</div>
+		</div>
+</div> -->
+
+

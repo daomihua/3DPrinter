@@ -1,0 +1,19 @@
+<div class="access-box">
+	<div class="access">
+		<div class="logo2"><img src="resource/user_img/logo2.png" alt=""></div>
+		<p>	
+			<span class="lebel">用户名</span>
+			<input type="text" ng-model="userName" ng-blur="checkNameNull()">
+			<span style="text-align: center; display: inline-block;width: 100%; color: #EC6D6D;" ng-if="check1">*请输入用户名</span>
+		</p>
+		<p>	
+			<span class="lebel">密&nbsp;&nbsp;&nbsp;码</span>
+			<input type="password" ng-model="password" ng-blur="checkPwdNull()">
+			<span style="text-align: center; color: #EC6D6D;display: inline-block;width: 100%;" ng-if="check2">*请输入密码</span>
+		</p>
+		<p>
+			<button class="btn btn-login btn-primary" ng-click="login()" ng-disabled="check1&&check2">登&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;录</button>
+			<a ui-sref="access.register" class="btn btn-register btn-primary">注&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;册</a>
+		</p>
+	</div>
+</div>

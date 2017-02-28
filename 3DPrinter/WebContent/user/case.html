@@ -1,0 +1,112 @@
+<div class="banner-box1"><img src="resource/user_img/home-Carousel3.jpg" alt=""></div>
+
+<div class="container">
+	<div class="case-box" ng-if="cases!=null">
+		<div class="title"><h3>{{category}}</h3></div>
+		<div class="col-sm-2" ng-repeat="case in cases">
+			<a ui-sref="index.content({caseID:case.caseID})">
+				<div class="case">
+					<img ng-src="{{case.caseImg}}" alt="">
+					<div class="mask"><p>{{case.caseTitle}}</p></div>
+				</div>
+			</a>
+		</div>
+	</div>	
+
+	<div class="case-box" ng-if="cases1.length!=0">
+		<div class="title"><h3>工业设计</h3></div>
+		<div class="col-sm-2" ng-repeat="case in cases1">
+			<a ui-sref="index.content({caseID:case.caseID})">
+				<div class="case">
+					<img ng-src="{{case.caseImg}}" alt="">
+					<div class="mask"><p>{{case.caseTitle}}</p></div>
+				</div>
+			</a>
+		</div>
+	</div>
+
+	<div class="case-box" ng-if="cases2.length!=0">
+		<div class="title"><h3>雕塑</h3></div>
+		<div class="col-sm-2" ng-repeat="case in cases2">
+			<a ui-sref="index.content({caseID:case.caseID})">
+				<div class="case">
+					<img ng-src="{{case.caseImg}}" alt="">
+					<div class="mask"><p>{{case.caseTitle}}</p></div>
+				</div>
+			</a>
+		</div>
+	</div>
+
+	<div class="case-box" ng-if="cases3.length!=0">
+		<div class="title"><h3>建筑</h3></div>
+		<div class="col-sm-2" ng-repeat="case in cases3">
+			<a ui-sref="index.content({caseID:case.caseID})">
+				<div class="case">
+					<img ng-src="{{case.caseImg}}" alt="">
+					<div class="mask"><p>{{case.caseTitle}}</p></div>
+				</div>
+			</a>
+		</div>
+	</div>
+
+	<div class="case-box" ng-if="cases4.length!=0">
+		<div class="title"><h3>工艺品</h3></div>
+		<div class="col-sm-2" ng-repeat="case in cases4">
+			<a ui-sref="index.content({caseID:case.caseID})">
+				<div class="case">
+					<img ng-src="{{case.caseImg}}" alt="">
+					<div class="mask"><p>{{case.caseTitle}}</p></div>
+				</div>
+			</a>
+		</div>
+	</div>
+
+	<div class="case-box" ng-if="cases5.length!=0">
+		<div class="title"><h3>医疗</h3></div>
+		<div class="col-sm-2" ng-repeat="case in cases5">
+			<a ui-sref="index.content({caseID:case.caseID})">
+				<div class="case">
+					<img ng-src="{{case.caseImg}}" alt="">
+					<div class="mask"><p>{{case.caseTitle}}</p></div>
+				</div>
+			</a>
+		</div>
+	</div>
+
+	<div class="case-box" ng-if="cases6.length!=0">
+		<div class="title"><h3>人像</h3></div>
+		<div class="col-sm-2" ng-repeat="case in cases6">
+			<a ui-sref="index.content({caseID:case.caseID})">
+				<div class="case">
+					<img ng-src="{{case.caseImg}}" alt="">
+					<div class="mask"><p>{{case.caseTitle}}</p></div>
+				</div>
+			</a>
+		</div>
+	</div>
+
+	<div class="case-box" ng-if="cases7.length!=0">
+		<div class="title"><h3>珠宝</h3></div>
+		<div class="col-sm-2" ng-repeat="case in cases7">
+			<a ui-sref="index.content({caseID:case.caseID})">
+				<div class="case">
+					<img ng-src="{{case.caseImg}}" alt="">
+					<div class="mask"><p>{{case.caseTitle}}</p></div>
+				</div>
+			</a>
+		</div>
+	</div>
+
+	<div class="case-box" ng-if="cases8.length!=0">
+		<div class="title"><h3>个性定制</h3></div>
+		<div class="col-sm-2" ng-repeat="case in cases8">
+			<a ui-sref="index.content({caseID:case.caseID})">
+				<div class="case">
+					<img ng-src="{{case.caseImg}}" alt="">
+					<div class="mask"><p>{{case.caseTitle}}</p></div>
+				</div>
+			</a>
+		</div>
+	</div>
+
+</div>

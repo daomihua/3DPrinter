@@ -1,0 +1,14 @@
+{ 
+	"state":"true",
+
+	"data":[
+		{"authorityID":1,"authorityName":"角色添加","authorityLink":"admin.addrole"},
+		{"authorityID":2,"authorityName":"角色删除/修改","authorityLink":"admin.deleterole"},
+		{"authorityID":3,"authorityName":"角色修改","authorityLink":"xxxx"},
+		{"authorityID":4,"authorityName":"添加管理员","authorityLink":"admin.addadmin"},
+		{"authorityID":5,"authorityName":"删除/修改管理员","authorityLink":"admin.deleteadmin"}
+	]
+
+
+
+}

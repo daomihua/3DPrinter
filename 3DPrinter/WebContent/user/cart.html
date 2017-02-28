@@ -1,0 +1,48 @@
+<div class="register-box">
+	<div class="register" style="min-height: 200px;" ng-if="!isLogin">
+		<h3>需要登录了才能查看购物车哦</h3>
+	</div>
+
+	<div class="cart-content" ng-if="isLogin">
+		<div class="title"><h4>我的购物车</h4></div>
+		<div class="cart-box" ng-repeat="cart in cartlist">
+			<div class="cart1">
+				<div class="tt">模型文件</div>
+				<div class="cc"><a href="">{{cart.modelName}}</a></div>
+			</div>
+			<div class="cart2">
+				<div class="tt">规格</div>
+				<div class="cc">{{cart.size}}</div>
+			</div>
+			<div class="cart3">
+				<div class="tt">数量</div>
+				<div class="cc">
+					<div class="number">
+						<span class="cut" ng-click="cart.quantity<=1?cart.quantity=1:cart.quantity=cart.quantity-1;changeNum(cart.modelID,cart.quantity)">-</span>
+						<input type="text" class="num" ng-model="cart.quantity" ng-change="changeNum(cart.modelID,cart.quantity)">
+						<span class="add" ng-click="cart.quantity=cart.quantity+1;changeNum(cart.modelID,cart.quantity)">+</span>
+					</div>
+				</div>
+			</div>
+			<div class="cart4">
+				<div class="tt">颜色</div>
+				<div class="cc">{{cart.color}}</div>
+			</div>
+			<div class="cart5">
+				<div class="tt">操作</div>
+				<div class="cc"><a href="" ng-click="deleteCart($index,cart.modelID)">删除</a></div>
+			</div>
+		</div>
+
+		<div style="width: 360px; margin: 30px auto; text-align: center;" ng-if="!show">
+			<p>您的购物车里还没有东西哦~</p>
+			<p><a ui-sref="index.intro" style="color: #EB5050;">去逛逛></a></p>
+		</div>
+
+		<div class="putorder">
+			<button class="btn btn-danger" ng-if="show" ng-click="checkInfo()">确认下单</button>
+		</div>
+		
+	</div>
+
+</div>

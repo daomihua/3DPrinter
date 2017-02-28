@@ -1,0 +1,77 @@
+<div class="banner-box1">
+	<img src="resource/user_img/home-Carousel6.jpg" alt="">
+</div>
+
+<div class="feedback-box">
+	<div class="m-title"><span>我的反馈</span></div>
+	<div class="sub-feedback">
+		<div class="f-row">
+			<div class="f-lab">用 户 名 ：</div>
+			<div class="f-right">xxxxx</div>
+		</div>
+		<div class="f-row">
+			<div class="f-lab">反馈内容：</div>
+			<div class="f-right"><textarea ng-model="content"></textarea></div>
+		</div>
+		<div class="f-row"><button class="btn btn-sub btn-primary" ng-click="subfeedback()">提 交</button></div>
+	</div>
+	<ul class="feedback-list">
+		<div class="f-title"><span>未处理的反馈</span></div>
+		<li ng-repeat="f in question"><a href="" show-lib-image ng-transclude ng-click="showfeed(f)">{{f.feedBack}}</a></li>
+	</ul>
+	<ul class="feedback-list">
+		<div class="f-title"><span>已处理的反馈</span></div>
+		<li ng-repeat="f in reply"><a href="" show-lib-image ng-transclude ng-click="showfeed(f)">{{f.feedBack}}</a></li>
+	</ul>
+</div>
+
+<!-- model fade -->
+<div class="modal fade" id="img-modal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button class="close" type="button" data-dismiss="modal">
+						<span aria-hidden="true" class="glyphicon glyphicon-remove"></span>
+						<span class="sr-only">Close</span>
+					</button>
+					<h4 class="modal-title">反馈内容</h4>
+				</div>
+
+				<div class="modal-body">
+					
+					<div class="feedback-content">
+						<div class="f-user">
+							<div class="portait">
+								<img src="resource/user_img/s-item1.png" alt="">
+								<span>{{feed.userNaem}}</span>
+							</div>
+							<div class="fb-content">
+								<div class="triangle-left"></div>
+								<div class="con">{{feed.feedBack}}
+									<p class="date">{{feed.submitDate}}</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="f-staff" ng-if="feed.reply!=null">
+							<div class="portait">
+								<img src="resource/admin_img/kefu.png" alt="">
+								<span>{{feed.replyer}}</span>
+							</div>
+							<div class="fb-content">
+								<div class="triangle-right"></div>
+								<div class="con">{{feed.reply}}
+									<p class="date">{{feed.replyDate}}</p>
+								</div>
+							</div>
+							
+						</div>
+
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+</div>
+<!-- model fade end -->

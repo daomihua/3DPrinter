@@ -1,0 +1,13 @@
+{
+	"data":
+	[
+		{"id":1,"category":"工业设计"},
+		{"id":2,"category":"雕塑"},
+		{"id":3,"category":"建筑"},
+		{"id":4,"category":"工艺品"},
+		{"id":5,"category":"医疗"},
+		{"id":6,"category":"人像"},
+		{"id":7,"category":"珠宝"},
+		{"id":8,"category":"个性定制"}
+	]
+}

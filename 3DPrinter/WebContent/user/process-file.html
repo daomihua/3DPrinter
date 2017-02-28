@@ -1,0 +1,71 @@
+<div class="d-container">
+	<div class="f-content">
+		<div class="f-list">
+			<div class="title">
+				<h3>我上传的工艺文件</h3>
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-control" ng-model="filterOptions.filterText" placeholder="输入查询条件">	
+			</div>
+			<div class="table-responsive">
+		      <div ng-grid="gridOptions"  class="grid"></div>
+		       <!--<pre>{{selectedRows}}</pre>-->
+		      
+		    </div>
+		    <div class="form-group">
+		    	<button class="col-md-2 col-md-offset-1 btn-danger btn" ng-disabled="selectedRows.length == 0" ng-click="deleteModels()">删除</button>
+		    </div>
+		</div>
+	</div>
+</div>
+
+<!-- <div class="title-box">
+						<label for="" class="control-label col-sm-3">选择类型</label>
+						<div class="col-sm-5 rr">
+							<select ng-model="modelcategory" class="form-control" ng-options="cate.category for cate in list"></select>
+							<span class="r-notice" ng-if="show">*请选择类型</span>
+						</div>
+					</div> -->
+
+<!-- model fade -->
+
+<div class="modal fade" id="upload-modal" ng-controller="ModelUploadCtrl">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button class="close" type="button" data-dismiss="modal">
+						<span aria-hidden="true" class="glyphicon glyphicon-remove"></span>
+						<span class="sr-only">Close</span>
+					</button>
+					<h4 class="modal-title">分享模型</h4>
+				</div>
+
+				<div class="modal-body">
+					<div class="title-box">
+						<label for="" class="control-label col-sm-3">模型简介</label>
+						<div class="col-sm-9 rr">
+							<input ng-model="mtitle" type="text" class="form-control" ng-blur="show1=mtitle==null?true:false">
+							<span ng-if="show1" class="r-notice">请输入简介</span>
+						</div>
+					</div>
+					<div class="title-box">
+						<label for="" class="control-label col-sm-3">选择类型</label>
+						<div class="col-sm-5 rr">
+							<select ng-model="modelcategory" class="form-control" ng-options="cate.category for cate in list"></select>
+							<span class="r-notice" ng-if="show">*请选择类型</span>
+						</div>
+					</div>
+					<!-- <div class="img-box">
+						<img ng-src="{{modelImg}}" alt="">
+					</div> -->
+					<div class="upfilebox">
+						<input type="file" name="modelImg" bane-file-select="onSelect($files,$error,$dataForm)" file-types="imgType" max-size="'50000000'" create-form="true"  upload-data="data" />
+						<label for="">上传图片</label>
+					</div>
+					<botton class="btn btn-info" style="display: block;margin: 0 auto;" show-upload-model  ng-transclude ng-click="shareModel()">确定分享</botton>
+				</div>
+			</div>
+		</div>
+</div>
+
+<!-- model fade end -->

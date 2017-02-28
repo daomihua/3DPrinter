@@ -1,0 +1,33 @@
+<div class="big-title">
+	<h3>反馈处理</h3>
+</div>
+
+<div class="grid-box">
+	<div class="panel panel-default">
+		<div class="panel-heading font-bold">处理反馈</div>
+		<div class="panel-body">
+			<form action="" class="form-horizontal">
+				<div class="form-group">
+					<label for="" class="control-label col-sm-1">搜索:</label>
+					<div class="col-sm-4">
+						<input type="text" class="form-control" ng-model="filterOptions.filterText">
+					</div>
+					<div class="col-sm-2">	
+						<select class="form-control" ng-model="selectedState.value">
+							<option value=""></option>
+							<option value="未处理">未处理</option>
+							<option value="已处理">已处理</option>
+						</select>		
+					</div>
+					<div class="col-sm-1">
+						<bottun class="btn btn-default pull-right" ng-click="search()">查询</bottun>
+					</div>
+				</div>
+
+			</form>
+			<div class="table-responsive">
+		      <div ng-grid="gridOptions"  class="grid"></div>
+		    </div>
+		</div>
+	</div>
+</div>

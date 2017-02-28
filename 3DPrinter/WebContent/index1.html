@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="resource/framework/angular/angular.min.js"></script>
+	<script src="resource/framework/angular/angular-resource.min.js"></script>
+	<script src="resource/test/app.js"></script>
+	<script src="resource/test/service.js"></script>
+	<script src="resource/test/controller.js"></script>
+
+</head>
+<body ng-controller="testCtrl">
+	<a href="" ng-click="getUser()">click me to test</a>
+	<div>{{username}}</div>
+	<br>
+	<form  method="post">
+	<input ng-model="name" type="text">
+	<input ng-model="pwd" type="text">
+	<button ng-click="check1()">登录</button>
+	</form>
+	<a href="admin/index.html">管理员登录</a>
+</body>
+</html>

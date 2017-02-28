@@ -1,0 +1,136 @@
+	<!-- 头部 导航 -->
+	<header class="head" ng-controller="SigninCtrl">
+		
+		<div class="navbar navbar-default p-nav">
+		<div class="nav-box">
+
+			<div class="navbar-header">
+				<a class="logo" href=""><img src="resource/user_img/logo.png" alt=""></a>
+				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+					<span class="sr-only">Toggle Navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+			<div class="collapse navbar-collapse navbar-responsive-collapse">
+				<ul class="nav navbar-nav">
+					<li><a ui-sref="index.home" class="hvr-bounce-to-top">首页</a></li>
+					<li><a ui-sref="index.case" class="hvr-bounce-to-top">成功案例</a></li>
+					<li><a ui-sref="index.designer" class="hvr-bounce-to-top">设计师</a></li>
+					<li><a ui-sref="index.library" class="hvr-bounce-to-top">3D模型库</a></li>
+					<!-- <li><a ui-sref="index.order" class="hvr-bounce-to-top">订单中心</a></li> -->
+					<li class="dropdown">
+						<a href="" data-toggle="dropdown" class="hvr-bounce-to-top dropdown-toggle">订单中心<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+						<li><a class="hvr-bounce-to-top" ui-sref="index.order">生产订单</a></li>
+						<li class="divider"></li>
+						<li><a class="hvr-bounce-to-top" ui-sref="index.designorder">设计订单</a></li>
+					</ul>
+				</ul>
+				<div class="user-signin">
+					<a ui-sref="index.cart" class="cart">
+						<span class="glyphicon glyphicon-shopping-cart">
+							<span ng-if="isLogin" class="badge">{{cartNum}}</span>
+						</span>
+					</a>
+					<span class="login" ng-if="isLogin">
+						<span class="glyphicon glyphicon-user"><a ui-sref="index.personal">{{currentUser.userName}}</a></span>
+						<div class="user-box">
+							<div id="triangle-up"></div>
+							<div class="user-content">
+								<span style="border-bottom: 1px #e0e0e0 solid"><a ui-sref="index.personal">个人信息</a></span>
+								<span><a ui-sref="index.file" style="border-bottom: 1px #e0e0e0 solid">工艺文件</a></span>
+								<span><a ui-sref="index.feedback">我的反馈</a></span>
+							</div>
+						</div>
+					</span>
+					<span class="login" ng-if="!isLogin"><a ui-sref="access.usersignin" >登录</a><span>|</span><a ui-sref="access.register">注册</a></span>
+				</div>
+			</div>
+
+		</div>
+		</div>
+
+	</header>
+
+
+	<!-- 主要内容 -->
+	<section class="main" ui-view >
+
+	</section>
+
+	<!-- 底部 -->
+	<footer class="footer">
+		<div class="foot-main">
+			<div class="row">
+				<div class="col-4">
+					<h4>联系与合作</h4>
+					<p><a href="">关于我们</a></p>
+					<p><a href="">联系我们</a></p>
+					<p><a href="">加入我们</a></p>
+				</div>
+				<div class="col-4">
+					<h4>关注我们</h4>
+					<p><a href="">新浪微博：@记物坊</a></p>
+					<p><a href="">微信服务：512125044</a></p>
+					<p><a href="">模型交流群：364657948</a></p>
+					<p><a href="">客服电话：400-032-5200</a></p>
+				</div>
+				<div class="col-4">
+					<h4>友情链接</h4>
+					<p><a href="">打印派</a></p>
+					<p><a href="">魔猴网</a></p>
+					<p><a href="">打印啦</a></p>
+					<p><a href="">趋梦工场</a></p>
+				</div>
+			</div>
+		</div>
+		<div class="foot-right">
+			<p>© 2013-2015 记物坊 ｜ 京ICP备13036976号-4 ｜ 京公网安备 110102003233-2</p>
+		</div>
+	</footer>
+
+	<!-- 登录弹框 -->
+	<div class="modal fade" id="login-modal" ng-controller="SigninCtrl">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button class="close" type="button" data-dismiss="modal">
+						<span aria-hidden="true" class="glyphicon glyphicon-remove"></span>
+						<span class="sr-only">Close</span>
+					</button>
+					<h4 class="modal-title"></h4>
+				</div>
+
+				<div class="modal-body">
+					<img src="resource/user_img/login.png" class="l-img" alt="">
+					<form action="" class="form-horizontal re-form">
+						<div class="form-group">
+							<label for="" class="control-label col-sm-3">用户名</label>
+							<div class="col-sm-9 rr">
+								<input ng-model="userName" type="text" ng-blur="show1=userName==null?true:false" class="form-control">
+								<span class="glyphicon glyphicon-user r-icon"></span>
+								<span ng-if="show1" class="r-notice">请输入用户名</span>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="" class="control-label col-sm-3">密码</label>
+							<div class="col-sm-9 rr">
+								<input ng-model="password" type="password" class="form-control" ng-blur="show2=password==null?true:false">
+								<span class="glyphicon glyphicon-lock r-icon"></span>
+								<span ng-if="show2" class="r-notice">请输入密码</span>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-offset-4 col-sm-8">
+								<button id="loginbtn" class="btn reg-btn btn-danger" ng-click="login()" login>登录</button>
+							</div>
+						</div>
+					</form>
+				</div>
+
+			</div>
+		</div>
+	</div>
+

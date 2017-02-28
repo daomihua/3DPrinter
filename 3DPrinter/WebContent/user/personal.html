@@ -1,0 +1,85 @@
+<div class="register-box">
+	<div class="register" style="min-height: 200px;" ng-if="!isLogin">
+		<h3>您还没有登录哦</h3>
+	</div>
+
+	<div class="register" ng-if="isLogin">
+		
+		<form class="form-horizontal re-form">
+			<h4>修改个人信息</h4>
+			<div class="form-group">
+				<label for="" class="control-label col-sm-3">用户名</label>
+				<div class="col-sm-9 rr">
+					<input ng-model="user.userName" type="text" disabled class="form-control">
+					<span class="glyphicon glyphicon-user r-icon"></span>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="" class="control-label col-sm-3">性别</label>
+				<div class="col-sm-9">
+					<label for="gender" class="radio-inline"><input type="radio" ng-model="user.sex" name="gender" value="男">男</label>
+					<label for="gender" class="radio-inline"><input type="radio" ng-model="user.sex" name="gender" value="女">女</label>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="" class="control-label col-sm-3">*输入密码</label>
+				<div class="col-sm-9 rr">
+					<input ng-model="user.password" type="password" class="form-control" ng-blur="show2=user.password==null?true:false">
+					<span class="glyphicon glyphicon-lock r-icon"></span>
+					<span ng-if="show2" class="r-notice">请输入密码</span>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="" class="control-label col-sm-3">*确认密码</label>
+				<div class="col-sm-9 rr">
+					<input ng-model="checkpwd" type="password" class="form-control" ng-blur="check()">
+					<span class="glyphicon glyphicon-lock r-icon"></span>
+					<span ng-if="show3" class="r-notice">请输入密码</span>
+					<span ng-if="show4" class="r-notice">密码不一致</span>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="" class="control-label col-sm-3">*电子邮箱</label>
+				<div class="col-sm-9 rr">
+					<input ng-model="user.email" type="email" class="form-control" ng-blur="show5=user.email==null?true:false">
+					<span class="glyphicon glyphicon-envelope r-icon"></span>
+					<span ng-if="show5" class="r-notice">请输入正确的邮箱</span>
+				</div>
+			</div>
+
+
+			<h4>修改收货信息</h4>
+			<div class="form-group">
+				<label for="" class="control-label col-sm-3">收件人</label>
+				<div class="col-sm-9 rr">
+					<input ng-model="user.realName" type="text" class="form-control">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="" class="control-label col-sm-3">联系电话</label>
+				<div class="col-sm-9 rr">
+					<input ng-model="user.phone" type="text" class="form-control">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="" class="control-label col-sm-3">邮编</label>
+				<div class="col-sm-9 rr">
+					<input ng-model="user.postCode" type="text" class="form-control">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="" class="control-label col-sm-3">收货地址</label>
+				<div class="col-sm-9 rr">
+					<input ng-model="user.address" type="text" class="form-control">
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-4 col-sm-8">
+					<input type="button" value="保存" class="btn reg-btn btn-danger" ng-click="save()">
+				</div>
+			</div>
+		</form>
+
+	</div>
+
+</div>

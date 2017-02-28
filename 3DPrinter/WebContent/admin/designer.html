@@ -1,0 +1,27 @@
+<div class="big-title">
+	<h3>查看我的订单</h3>
+</div>
+
+<div class="grid-box">
+	<div class="panel panel-default">
+		<div class="panel-heading font-bold">查看订单</div>
+		<div class="panel-body">
+			<div class="select-item">
+				<button class="btn btn-primary" ng-click="changeState(0)">全部订单</button>
+				<button class="btn btn-danger" ng-click="changeState(1)">接收的新订单</button>
+				<button class="btn btn-success" ng-click="changeState(2)">已付款的订单</button>
+				<button class="btn btn-warning" ng-click="changeState(3)">生产中的订单</button>
+				<button class="btn btn-info" ng-click="changeState(4)">已发货的订单</button>
+				<div class="col-sm-3">
+					<input type="text" class="form-control" ng-model="filterOptions.filterText" placeholder="输入订单账号">	
+				</div>
+			</div>
+			<div class="table-responsive">
+		      <div ng-grid="gridOptions" class="grid"></div>
+		    </div>
+		    <div class="col-sm-offset-2 col-sm-3">
+		    	<bottun class="btn btn-danger" ng-if="state==2">确认生产</bottun>
+		    </div>
+		</div>
+	</div>
+</div>

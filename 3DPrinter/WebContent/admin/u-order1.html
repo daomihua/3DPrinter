@@ -1,0 +1,38 @@
+<div class="big-title">
+	<h3>查看设计订单</h3>
+</div>
+
+<div class="grid-box">
+	<div class="panel panel-default">
+		<div class="panel-heading font-bold">查看设计订单</div>
+		<div class="panel-body">
+
+			<form action="" class="form-horizontal">
+				<div class="form-group">
+					<div class="col-sm-3">
+						<input type="text" class="form-control" ng-model="filterOptions.filterText" placeholder="输入订单账号">	
+					</div>
+					<div class="col-sm-2">	
+						<select class="form-control" ng-model="selectedState.value">
+							<option value="" selected="true">全部</option>
+							<option value="已取消">已取消</option>
+							<option value="待确认">待确认</option>
+							<option value="待报价">待报价</option>
+							<option value="待付款">待付款</option>
+							<option value="待设计">待设计</option>
+							<option value="已设计">已设计</option>
+						</select>		
+					</div>
+					<div class="col-sm-1">
+						<bottun class="btn btn-default pull-right" ng-click="search()">查询</bottun>
+					</div>
+				</div>
+			</form>
+
+			<div class="table-responsive">
+		      <div ng-grid="gridOptions" class="grid"></div>
+		    </div>
+
+		</div>
+	</div>
+</div>

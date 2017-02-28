@@ -1,0 +1,10 @@
+{
+	"state":true,
+	"data":
+	[{"roleID":1,"roleName":"设计师","roleIntro":"xxxx"},
+	{"roleID":2,"roleName":"工艺文件管理员","roleIntro":"xxxx"},
+	{"roleID":3,"roleName":"案例管理员","roleIntro":"xxxx"},
+	{"roleID":4,"roleName":"用户管理员","roleIntro":"xxxx"},
+	{"roleID":5,"roleName":"材料管理员","roleIntro":"xxxx"},
+	{"roleID":6,"roleName":"案例管理员","roleIntro":"xxxx"}]
+}

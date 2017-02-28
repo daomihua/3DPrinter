@@ -1,0 +1,64 @@
+<div class="register-box">
+	<div class="register" style="min-height: 200px;" ng-if="!isLogin">
+		<h3>您还没有登录哦</h3>
+	</div>
+
+	<div class="content-box" ng-if="isLogin">
+		<div class="o-title">我的生产订单</div>
+		<div class="tabbable">
+			<ul class="nav nav-tabs">
+				<li ng-class="{active:show==$index}" ng-click="select($index)" ng-repeat="s in state"><a href="" >{{s.name}}</a></li>
+			</ul>
+			<div class="tab-content">
+				<div class="order-head">
+					<div class="order-detail">
+						<div class="item">
+							<div class="col-6">模型文件</div>
+							<div class="col-2">报价</div>
+							<div class="col-2">数量</div>
+							<div class="col-2">材料</div>
+						</div>
+					</div>
+					<div class="o-action">状态</div>
+				</div>
+				<div class="order" ng-repeat="order in orders">
+					<div class="order-info1">订单编号：{{order.orderID}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;设计师：{{order.designer}}</div>
+					<div class="order-detail">
+						<div class="item" ng-repeat="item in order.items">
+							<div class="col-6">	
+								<div class="detail">
+									{{item.modelName}}
+								</div>
+							</div>
+							<div class="col-2">	
+								<div class="detail">
+									--.--
+								</div>
+							</div>
+							<div class="col-2">	
+								<div class="detail">
+									×{{item.quantity}}
+								</div>
+							</div>
+							<div class="col-2">	
+								<div class="detail">
+									{{item.material}}
+								</div>
+							</div>
+						</div>
+						
+					</div>
+					<div class="o-action">
+						<p>{{order.orderState}}</p>
+						<p><a href="" ng-click="toDtail(order.orderID)">查看详情</a></p>
+						<p><a href="" ng-if="show<2" ng-click="cancelOrder($index,order.orderID)">取消订单</a></p>
+						<p><a href="" ng-click="toDtail(order.orderID)" ng-if="order.orderState=='待付款'">付款</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+			
+	</div>
+
+</div>

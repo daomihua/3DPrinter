@@ -1,0 +1,55 @@
+<div class="d-container">
+	<div class="d-content">
+
+		<div class="d-header">
+			<div class="bg-white-opacity">
+					<div class="d-portrait"><img ng-src="{{designer.portrait}}" alt=""></div>
+					<div class="d-info">
+						<h3>{{designer.adName}}</h3>
+						<p>联系我：<a target="_blank"  class="qq2" ng-href="http://wpa.qq.com/msgrd?v=3&uin={{designer.adQQ}}&site=qq&menu=yes" title="点击给我发消息">	
+						</a></p>
+						<p>
+							<a ui-sref="index.userdesign({designer:designer.adName})">找他设计</a>
+						</p>
+					</div>
+			</div>
+		</div>
+
+		<div class="d-list">
+			<div class="title"><h3>他的作品</h3></div>
+			<div class="col-sm-4 block" ng-repeat="item in items">
+				<div class="d-item" show-image ng-transclude>
+					<img ng-src="{{item.image}}" alt="">
+					<div class="white-opacity"></div>
+					<div class="black-opacity">
+						<p>{{item.title}}</p>
+					</div>
+				</div>
+
+<!-- model fade -->
+<div class="modal fade" id="img-modal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button class="close" type="button" data-dismiss="modal">
+						<span aria-hidden="true" class="glyphicon glyphicon-remove"></span>
+						<span class="sr-only">Close</span>
+					</button>
+					<h4 class="modal-title">{{item.title}}</h4>
+				</div>
+
+				<div class="modal-body">
+					<div class="show-img">
+						<img ng-src="{{item.image}}" alt="">
+					</div>
+				</div>
+			</div>
+		</div>
+</div>
+<!-- model fade end -->
+
+			</div>
+		</div>
+
+	</div>
+</div>

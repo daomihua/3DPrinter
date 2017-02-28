@@ -1,0 +1,51 @@
+<div class="big-title">
+	<h3>编辑案例</h3>
+</div>
+
+<!-- angular编辑器 -->
+<div class="editor-box">
+	<div text-angular ng-model="c.caseContent" class="btn-groups"></div>
+</div>
+
+<div class="ctrl-box">
+<form action="" class="form-horizontal">
+
+	<div class="form-group">
+		<label for="" class="control-label col-sm-1 col-sm-offset-1">案例标题</label>
+		<div class="col-sm-6">
+			<input type="text" ng-model="c.caseTile" class="form-control">
+		</div>
+	</div>
+
+	<div class="form-group ci">
+		<label for="" class="control-label col-sm-1 col-sm-offset-1">选择类型</label>
+		<div class="col-sm-4">
+			<select ng-model="c.category" class="form-control" ng-options="cate.category for cate in list"></select>
+			<span class="ct" ng-if="show">*请选择类型</span>
+		</div>
+	</div>
+
+	<div class="form-group">		
+		<div ng-controller="addCaseImgCtrl">
+			<label for="" class="control-label col-sm-1 col-sm-offset-1 ">上传图片</label>
+			<div class="col-sm-6">
+		    	<input type="file" name="caseImg" bane-file-select="onSelect($files,$error,$dataForm)" file-types="imgType" max-size="'50000000'" create-form="true"  upload-data="data" />
+		    </div>
+		</div>
+	</div>
+	<div class="form-group">		
+		
+			<label for="" class="control-label col-sm-1 col-sm-offset-1 ">上传小图</label>
+			<div class="col-sm-6">
+		    	<input type="file" name="caseImg" bane-file-select="onSelect($files,$error,$dataForm)" file-types="imgType" max-size="'50000000'" create-form="true"  upload-data="data" />
+		    	<p>{{c.caseImg}}</p>
+		    </div>
+		
+	</div>
+
+	<div class="form-group">
+		<input type="button" value="发布" ng-click="publishCase()" class="col-sm-2 col-sm-offset-1 btn-danger btn pull-left">
+	</div>
+</form>
+</div>
+

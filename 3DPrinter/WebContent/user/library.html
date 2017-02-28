@@ -1,0 +1,64 @@
+<div class="container">
+	<div class="l-menu">
+		<div class="menu-box">
+			<div class="menu-item" id="category" style="position: relative;"><a href=""><span class="glyphicon glyphicon-filter">{{ca2}}</span></a>
+				<div class="filter-box">
+					<div id="triangle-up"></div>
+					<div class="filter-content">
+						<span ng-click="selectCategory()">全部</span>
+						<span ng-repeat="c in category" ng-click="selectCategory(c.category)">{{c.category}}</span>
+					</div>
+				</div>
+			</div>
+			<div class="menu-item"><a href=""><span class="glyphicon glyphicon-fire" ng-click="change('download')">最热</span></a></div>
+			<div class="menu-item"><a href=""><span class="glyphicon glyphicon-tint" ng-click="change('uploadDate')">最新</span></a></div>
+		</div>
+	</div>
+	<div class="library">
+
+		<div class="col-3" ng-repeat="m in models|filter:ca|orderBy:od1:od2">
+			<div class="l-box">
+				<div class="i-img" show-lib-image ng-transclude ng-click="showImg(m)">
+					<img ng-src="{{m.modelPic}}" alt="{{m.title}}">
+					<div class="l-mask"><p>{{m.title}}</p></div>
+				</div>
+				<div class="action-box">
+					<div class="l-action">
+						<div class="a1">
+							{{m.uploadDate}}
+						</div>
+						<div class="a2">
+							<a href="" ng-click="download(m)"><span class="glyphicon glyphicon-download-alt"></span>&nbsp;{{m.download}}</a>
+						</div>
+					</div>
+					<div class="l-action" style="border-bottom: 0;">
+						<span class="glyphicon glyphicon-user"></span>{{m.userName}}
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+<!-- model fade -->
+<div class="modal fade" id="img-modal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button class="close" type="button" data-dismiss="modal">
+						<span aria-hidden="true" class="glyphicon glyphicon-remove"></span>
+						<span class="sr-only">Close</span>
+					</button>
+					<h4 class="modal-title">{{show.title}}</h4>
+				</div>
+
+				<div class="modal-body">
+					<div class="show-img">
+						<img ng-src="{{show.image}}" alt="">
+					</div>
+				</div>
+			</div>
+		</div>
+</div>
+<!-- model fade end -->

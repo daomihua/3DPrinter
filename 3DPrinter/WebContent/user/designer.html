@@ -1,0 +1,24 @@
+<div class="banner-box2"><img src="resource/user_img/home-Carousel6.jpg" alt=""></div>
+
+<div class="container">
+	<div class="designer-box">
+		<div class="search-box">
+			<input type="text" ng-model="searchtext" placeholder="搜索设计师">
+			<div class="icon"><span class="glyphicon glyphicon-search"></span></div>
+		</div>
+		<div class="col" ng-repeat="designer in designers | filter:searchtext">
+			<div class="designer">
+				<div class="designer-img">
+					<a ui-sref="index.onedesigner({adID:{{designer.adID}}})"><img ng-src="{{designer.portrait}}" alt=""></a>
+				</div>
+				<!-- <a href=""><div class="qq"></div></a> -->
+				<a target="_blank" ng-href="http://wpa.qq.com/msgrd?v=3&uin={{designer.adQQ}}&site=qq&menu=yes"
+				title="点击给我发消息">
+				<!--  -->
+					<div class="qq"></div>
+				</a>
+				<p>	设计师：{{designer.adName}}</p>
+			</div>
+		</div>
+	</div>
+</div>

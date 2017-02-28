@@ -1,0 +1,10 @@
+{
+	"state":true,
+	"data":
+	[{"adName":"minor1","adPassword":"1234","adPhone":"15677360950","adEmail":"12345@163.com","adSex":"女","roleID":2,"roleName":"设计师"},
+	{"adName":"minor2","adPassword":"1234","adPhone":"15677360950","adEmail":"12345@163.com","adSex":"女","roleID":2,"roleName":"设计师"},
+	{"adName":"minor3","adPassword":"1234","adPhone":"15677360950","adEmail":"12345@163.com","adSex":"女","roleID":2,"roleName":"设计师"},
+	{"adName":"minor4","adPassword":"1234","adPhone":"15677360950","adEmail":"12345@163.com","adSex":"女","roleID":2,"roleName":"设计师"},
+	{"adName":"minor5","adPassword":"1234","adPhone":"15677360950","adEmail":"12345@163.com","adSex":"女","roleID":2,"roleName":"设计师"},
+	{"adName":"minor6","adPassword":"1234","adPhone":"15677360950","adEmail":"12345@163.com","adSex":"女","roleID":2,"roleName":"设计师"}]
+}

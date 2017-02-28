@@ -1,0 +1,63 @@
+<div class="container">
+		<div class="detail-box">
+
+			<h4>设计订单信息</h4>
+			<div class="con">
+				<dl>
+					<dt>需求文档</dt>
+					
+					<dd><a href="">{{order.demandFile}}</a></dd>
+				</dl>
+				<dl>
+					<dt>需求描述</dt>
+					<dd>{{order.demand}}</dd>
+				</dl>
+			</div>
+
+			<div class="con">
+				<dl>
+					<dt>设计文件</dt>
+					<dd><a href="" ng-if="order.state=='已设计'">设计师正在加快速度~</a></dd>
+					<dd><a href="" ng-click="download(order.designFile)">{{order.designFile}}</a></dd>
+				</dl>
+				<dl>
+					<dt>设计师</dt>
+					<dd>{{order.designer}}</dd>
+				</dl>
+				<dl>
+					<dt>当前状态</dt>
+					<dd>{{order.state}}</dd>
+				</dl>
+			</div>
+
+			<div class="con">
+				<dl>
+					<dt>订单信息</dt>
+					<dd>
+						<p><span>订单编号:&nbsp;{{order.dorderID}}</span>
+						<span>创建时间:&nbsp;{{order.dorderDate | date:'yyyy-MM-dd HH:mm:ss'}}</span>
+						<span>确认时间:&nbsp;{{order.checkDate}}</span></p>
+						<p><span>付款时间:&nbsp;{{order.payDate}}</span>
+						<span>发货时间:&nbsp;{{order.deliverDate}}</span>
+						</p>
+					</dd>
+				</dl>
+			</div>
+
+			
+			<div class="order-action">
+				<div class="col-sm-1 col-sm-offset-3">
+					<button class="btn btn-warning" ng-click="back()">返回列表</button>
+				</div>
+				<div class="col-sm-1 col-sm-offset-1" ng-if="order.state=='待付款'">
+					<button class="btn btn-danger" ng-click="payOrder()">确认付款</button>
+				</div>
+				<div class="col-sm-1 col-sm-offset-1" ng-if="order.state=='待确认'||order.state=='待付款'">
+					<button class="btn btn-info" ng-click="cancelOrder()">取消订单</button>
+				</div>
+			</div>
+
+		</div>
+
+			
+</div>

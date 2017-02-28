@@ -1,0 +1,27 @@
+<div class="big-title">
+	<h3>删除角色</h3>
+</div>
+
+<div class="grid-box">
+	<div class="panel panel-default">
+		<div class="panel-heading font-bold">删除角色</div>
+		<div class="panel-body">
+
+			<form action="" class="form-horizontal">
+				<div class="form-group">
+					<label for="" class="control-label col-sm-1">搜索:</label>
+					<div class="col-sm-4">
+						<input type="text" class="form-control" ng-model="filterOptions.filterText">
+					</div>
+				</div>
+			</form>
+
+			<div class="table-responsive">
+		      <div ng-grid="gridOptions" class="grid"></div>
+		       <!--<pre>{{selectedRows}}</pre>-->
+		      <button class="col-md-2 col-md-offset-1 btn-danger btn pull-left" ng-disabled="selectedRows.length == 0" ng-click="deleteRoles()">删除角色</button>
+		    </div>
+
+		</div>
+	</div>
+</div>

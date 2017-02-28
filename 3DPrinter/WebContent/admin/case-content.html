@@ -1,0 +1,10 @@
+<div class="c-content">
+	<h4><span class="lab">标 &nbsp;&nbsp;&nbsp;&nbsp;题：</span><span>{{onecase.caseTitle}}</span></h4>
+	<p><span class="lab">发&nbsp;&nbsp;布&nbsp;&nbsp;者：</span><span>{{onecase.publisher}}</span></p>
+	<p><span class="lab">发布时间：</span><span>{{onecase.publishTime}}</span></p>
+	<p><span class="lab">正&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;文：</span><span style="float: right;">
+		<input type="button" value="审核" class="btn btn-info" ng-click="auditCase()">
+		<button class="btn btn-primary" ng-click="back()">返回列表</button>
+		</span></p>
+	<div class="caseinfo" ng-bind-html="onecase.caseContent"></div>
+</div>

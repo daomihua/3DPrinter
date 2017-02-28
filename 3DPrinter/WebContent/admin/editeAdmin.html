@@ -1,0 +1,59 @@
+<div class="big-title">
+	<h3>编辑管理员</h3>
+</div>
+
+
+	<div class="add-box">
+		<div class="panel panel-default">
+			<div class="panel-heading font-bold">编辑管理员</div>
+			<div class="panel-body">
+				<form action="" class="form-horizontal add-form">
+					<div class="form-group">
+						<label for="" class="control-label col-sm-2">用户名</label>
+						<div class="col-sm-9">
+							<input type="text" ng-model="admin.adName" class="form-control" disabled>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="" class="control-label col-sm-2">性别</label>
+						<div class="col-sm-9">
+							<label for="gender" class="radio-inline"><input type="radio" ng-model="admin.adSex" name="gender" value="男">男</label>
+							<label for="gender" class="radio-inline"><input type="radio" ng-model="admin.adSex" name="gender" value="女">女</label>
+						</div>
+					</div>
+					<div class="form-group ci">
+						<label for="" class="control-label col-sm-2">联系电话</label>
+						<div class="col-sm-9">
+							<input type="text" ng-model="admin.adPhone" class="form-control" ng-blur="checkPhone()">
+							<span class="ct" ng-if="show2">*电话不能为空</span>
+							<span class="ct" ng-if="show4">*请输入有效电话</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="" class="control-label col-sm-2">电子邮件</label>
+						<div class="col-sm-9">
+							<input type="email" ng-model="admin.adEmail" class="form-control">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="" class="control-label col-sm-2">QQ号码</label>
+						<div class="col-sm-9">
+							<input type="text" ng-model="admin.adQQ" class="form-control">
+						</div>
+					</div>
+					<div class="form-group ci">
+						<label for="" class="control-label col-sm-2">角色分配</label>
+						<div class="col-sm-9">
+							<select ng-model="chooseRole" class="form-control" ng-options="role.roleName for role in roles"></select>
+							<span class="ct" ng-if="show3">*请选择角色</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-offset-4 col-sm-8">
+							<input type="button" value="保存" class="btn big-btn sub" ng-click="saveAdmin()">
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>	
+	</div>
